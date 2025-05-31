@@ -1,0 +1,603 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DXC-0 Linux Documentation">
+      
+      
+        <meta name="author" content="DXC-0">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Tor Node - DXC-0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DXC-0" class="md-header__button md-logo" aria-label="DXC-0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DXC-0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tor Node
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DXC-0" class="md-nav__button md-logo" aria-label="DXC-0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DXC-0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Server Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chose-a-solid-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chose a solid distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-with-root-and-create-an-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect with root and create an user
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewalld-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewalld configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardening
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tor-installation-archlinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tor installation (Archlinux)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tor-installation-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tor installation (Debian)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Tor Node</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p><br/>
+As a reminder, tor is a project allowing everyone to obtain a satisfactory level of anonymity and replacing the usual VPNs. The project is not linked to a private company and the relays are all operated by volunteers or third party groups. The fact that the set is semi-decentralized, forcing you to pass several rebounds, allows you to cover your location on the internet. This is useful in highly censored, dictatorial countries or in regimes where freedom of expression begins to be undermined. It also serves poor people, without money, anonymity should be a right and not a luxury, which is why many actors help the tor project to continue to exist and provide broadband for the network. Here we will see how to deploy a secure server running a rebound for the tor network.
+<br/></p>
+<hr />
+<h2 id="server-deployment">Server Deployment</h2>
+<h4 id="chose-a-solid-distribution">Chose a solid distribution</h4>
+<p>First chose a correct distribution. I love minimalist rolling distributions with arch, but most cloud providers do not offer this option.</p>
+<ul>
+<li>Archlinux</li>
+<li>Debian / Ubuntu</li>
+<li>Red Hat Bases (Fedora, Alma, Rocky ...)</li>
+</ul>
+<h4 id="connect-with-root-and-create-an-user">Connect with root and create an user</h4>
+<p>The first step is to connect with the root account provided by the cloud provider.
+Create a new user and add it to the wheel sudo group, if it is not present, install it.</p>
+<pre><code>useradd srv-admin
+passwd srv-admin
+usermod -aG wheel srv-admin
+</code></pre>
+<p>Well, you now have a clean user, so we'll already be able to secure a little ssh and prevent connections to the root and old cloud provider password.</p>
+<ul>
+<li>Here we have changed the default port on 5588 (this avoids most bots that scan on 22 defaut ssh)</li>
+<li>We forbid root connection</li>
+<li>We limit sessions to one</li>
+<li>Also, we block attempts to up to three</li>
+<li>We remove X11 and all horrible stuff</li>
+</ul>
+<p>Go to the directory /etc/ssh and open sshd_config and modify with :</p>
+<pre><code>Protocol 2
+Port 5588
+PermitRootLogin no
+MaxAuthTries 3
+MaxSessions 1
+AllowUsers &quot;srv-admin&quot;
+DenyUsers root
+AuthorizedKeysFile  .ssh/authorized_keys
+KbdInteractiveAuthentication no
+UsePAM yes
+AllowTcpForwarding no
+AllowAgentForwarding no
+PermitTunnel no
+LoginGraceTime 300
+X11Forwarding no
+ClientAliveInterval 0
+PermitTTY no
+PrintMotd no
+Banner /etc/banner.exemple
+Subsystem   sftp    /usr/lib/ssh/sftp-server
+LogLevel VERBOSE
+</code></pre>
+<p><br/></p>
+<hr />
+<h2 id="firewalld-configuration">Firewalld configuration</h2>
+<p>Here we add firewalld and reject all connections except those on the custom ssh port (5588). We also put the port chosen for tor (here 9696)</p>
+<ul>
+<li>Install firewalld for network security</li>
+</ul>
+<pre><code>yay -S firewalld
+sudo systemctl enable --now firewalld.service
+sudo firewall-cmd --set-default-zone=block
+sudo firewall-cmd --add-port=5588/tcp --zone=block --permanent
+sudo firewall-cmd --add-port=9696/tcp --zone=block --permanent
+</code></pre>
+<p>Reload and restart the service : </p>
+<pre><code>sudo firewall-cmd --reload
+sudo systemctl restart firewalld.service
+</code></pre>
+<p><br/></p>
+<hr />
+<h2 id="hardening">Hardening</h2>
+<p>Modify the /etc/passwd file and change root line with : </p>
+<pre><code>root:x:0:0:root:/root:/sbin/nologin
+</code></pre>
+<p>Disable TTY access :</p>
+<pre><code>sudo rm -rf /etc/securetty
+sudo touch /etc/securetty
+sudo chmod 600 /etc/securetty
+</code></pre>
+<p>Enforce the PAM configuration : </p>
+<pre><code>sudo nano /etc/pam.d/login
+</code></pre>
+<p>Edit the file with theses lines : </p>
+<pre><code>auth    required       pam_listfile.so \
+        onerr=succeed  item=user  sense=deny  file=/etc/ssh/deniedusers
+</code></pre>
+<p>Restric file modification : </p>
+<pre><code>chmod 600 /etc/ssh/deniedusers
+</code></pre>
+<p>Edit the file <code>sudo nano /etc/ssh/deniedusers</code> and add "root"</p>
+<p>Disable root password and groups :</p>
+<pre><code>sudo passwd -l root
+sudo usermod -L root
+</code></pre>
+<p>Install and enable fail2ban : </p>
+<pre><code>yay -S fail2ban
+sudo systemctl enable --now fail2ban.service
+</code></pre>
+<p>Enable SSH jail : </p>
+<pre><code>sudo nano /etc/fail2ban/jail.local
+</code></pre>
+<pre><code>[sshd]
+
+enabled = true
+port = 5588
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 1w
+</code></pre>
+<p>Reload and restart fail2ban</p>
+<pre><code>sudo systemctl reload fail2ban.service &amp;&amp; sudo systemctl restart fail2ban.service
+</code></pre>
+<p>Install AppArmor (MAC module): </p>
+<pre><code>yay -S apparmor
+</code></pre>
+<p>Edit kernel parameters : </p>
+<pre><code>
+sudo nano /etc/boot/XXXXXlinux.conf
+
+</code></pre>
+<p>Add this line : </p>
+<pre><code>lsm=landlock,lockdown,yama,integrity,apparmor,bpf
+</code></pre>
+<p>Reboot the server and check if apparmor is active : </p>
+<pre><code>aa-status
+</code></pre>
+<p>Enforce defaults profiles : </p>
+<pre><code>aa-enforce /etc/apparmor.d/*
+</code></pre>
+<p><br/></p>
+<hr />
+<h2 id="tor-installation-archlinux">Tor installation (Archlinux)</h2>
+<p>Install tor on the concerned server :</p>
+<pre><code>yay -S tor
+</code></pre>
+<p>Modify the Torrc file with your custom configuration : </p>
+<pre><code>sudo nano /etc/tor/torrc
+</code></pre>
+<p>Paste the configuration :</p>
+<pre><code>User tor #user for daemon work
+Log notice syslog
+DataDirectory /var/lib/tor
+ORPort 9696 #External port recheable for tor
+ORPort 443 NoListen 
+ORPort 127.0.0.1:9090 NoAdvertise
+Nickname TorIsMyFriend #RelayName (visible on tor metrics)
+ContactInfo DXC-0 #Optional (visible on tor metrics)
+MyFamily 8764E9BE25CE405C76E1DD0F0937D9BF6EA16A0C #IMPORTANT !!! Paste all of your relays hashes
+ExitPolicy reject *:* # no exits allowed
+ExitRelay 0 #prohibit exit
+SocksPort 0
+</code></pre>
+<p>Start the service : </p>
+<pre><code>sudo systemctl enable --now tor.service
+</code></pre>
+<p><br/></p>
+<hr />
+<h2 id="tor-installation-debian">Tor installation (Debian)</h2>
+<p>Install apt-transport-https :</p>
+<pre><code>sudo apt install apt-transport-https
+</code></pre>
+<p>Create source list : </p>
+<pre><code>sudo nano /etc/apt/sources.list.d/tor.list
+</code></pre>
+<p>Detect the codename : </p>
+<pre><code>lsb_release -c
+</code></pre>
+<p>Add these lanes to the file : </p>
+<pre><code>deb     [signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org &lt;CODENAME&gt; main
+deb-src [signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org &lt;CODENAME&gt; main
+</code></pre>
+<p>Install gnupg :</p>
+<pre><code>sudo apt install gnupg
+</code></pre>
+<p>Add GPG keys : </p>
+<pre><code>wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/deb.torproject.org-keyring.gpg &gt;/dev/null
+</code></pre>
+<p>Update and install tor : </p>
+<pre><code>apt update
+apt install tor deb.torproject.org-keyring
+</code></pre>
+<p>Modify the Torrc file with your custom configuration : </p>
+<pre><code>sudo nano /etc/tor/torrc
+</code></pre>
+<p>Paste the configuration :</p>
+<pre><code>User debian-tor #user for daemon work
+Log notice syslog
+DataDirectory /var/lib/tor
+ORPort 9696 #External port recheable for tor
+ORPort 443 NoListen
+ORPort 127.0.0.1:9090 NoAdvertise
+Nickname TorIsMyFriend #RelayName (visible on tor metrics)
+ContactInfo DXC-0 #Optional (visible on tor metrics)
+MyFamily 8764E9BE25CE405C76E1DD0F0937D9BF6EA16A0C #IMPORTANT !!! Paste all of your relays hashes
+ExitPolicy reject *:* # no exits allowed # no exits allowed
+ExitRelay 0 #prohibit exit
+SocksPort 0
+</code></pre>
+<p>Start the service : </p>
+<pre><code>sudo systemctl enable --now tor@default.service
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      DXC-0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

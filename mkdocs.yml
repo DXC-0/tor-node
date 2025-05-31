@@ -1,0 +1,18 @@
+site_name: DXC-0
+theme:
+  name: material
+  include_sidebar: false
+  palette:
+    scheme: slate
+    primary: "black"
+    accent: "green"
+  highlightjs: true
+site_author: DXC-0
+copyright: DXC-0
+site_description: DXC-0 Linux Documentation
+nav:
+  - Tor Node: 'index.md'
+extra_css:
+  - assets/custom.css
+extra_html:
+  - '<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">'

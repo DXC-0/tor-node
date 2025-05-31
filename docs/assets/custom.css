@@ -1,0 +1,89 @@
+.md-nav {
+    display: none;
+}
+
+.md-search {
+    display: none;
+}
+
+.md-content {
+  --md-typeset-a-color: #008000;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+}
+
+.md-nav, .md-sidebar-nav {
+  font-family: 'Fira Code', monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Style de la barre de navigation */
+.md-header {
+  background-color: #0f0f0f;  /* Fond noir */
+  color: #00FF00;  /* Texte vert hacker */
+  font-family: 'Fira Code', monospace; /* Police hacker (optionnel) */
+  border-bottom: 2px solid #00FF00; /* Bordure verte */
+  box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.1); /* Ombre verte */
+}
+
+/* Style des liens dans la barre de navigation */
+.md-nav__link {
+  color: #00FF00;  /* Texte vert */
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Effet de survol des liens */
+.md-nav__link:hover {
+  background-color: #00FF00;
+  color: #0f0f0f;
+  border-radius: 5px;
+}
+
+/* Barre de recherche en haut */
+.md-search__input {
+  background-color: #0f0f0f;
+  border: 2px solid #00FF00;
+  color: #00FF00;
+  padding: 5px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Ajuster l'alignement du logo dans la barre */
+.md-header .md-logo {
+  height: 40px; /* Ajuste la taille du logo */
+  width: auto;
+}
+
+/* Ajouter un effet de "blink" sur le titre */
+.md-header h1 {
+  animation: blink 1s step-end infinite;
+  color: #00FF00;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Animation pour le titre clignotant */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.md-header .md-logo {
+  display: none;
+}

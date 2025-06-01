@@ -83,3 +83,19 @@ h1, h2, h3, h4, h5, h6, p, li {
 .md-header .md-logo {
   display: none;
 }
+
+.md-typeset h1 {
+  color: #ee22b0 !important;
+}
+
+.md-typeset h2 {
+  color: #ee22b0 !important;
+}
+
+.md-typeset h3 {
+  color: #ee22b0 !important;
+}
+
+.md-typeset h4 {
+  color: #ee22b0 !important;
+}

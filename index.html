@@ -457,8 +457,7 @@
 
 <h2 id="introduction">Introduction</h2>
 <p><br/>
-As a reminder, tor is a project allowing everyone to obtain a satisfactory level of anonymity and replacing the usual VPNs. The project is not linked to a private company and the relays are all operated by volunteers or third party groups. The fact that the set is semi-decentralized, forcing you to pass several rebounds, allows you to cover your location on the internet. This is useful in highly censored, dictatorial countries or in regimes where freedom of expression begins to be undermined. It also serves poor people, without money, anonymity should be a right and not a luxury, which is why many actors help the tor project to continue to exist and provide broadband for the network. Here we will see how to deploy a secure server running a rebound for the tor network.
-<br/></p>
+As a reminder, tor is a project allowing everyone to obtain a satisfactory level of anonymity and replacing the usual VPNs. The project is not linked to a private company and the relays are all operated by volunteers or third party groups. The fact that the set is semi-decentralized, forcing you to pass several rebounds, allows you to cover your location on the internet. This is useful in highly censored, dictatorial countries or in regimes where freedom of expression begins to be undermined. It also serves poor people, without money, anonymity should be a right and not a luxury, which is why many actors help the tor project to continue to exist and provide broadband for the network. Here we will see how to deploy a secure server running a rebound for the tor network.</p>
 <hr />
 <h2 id="server-deployment">Server Deployment</h2>
 <h4 id="chose-a-solid-distribution">Chose a solid distribution</h4>
@@ -506,7 +505,6 @@ Banner /etc/banner.exemple
 Subsystem   sftp    /usr/lib/ssh/sftp-server
 LogLevel VERBOSE
 </code></pre>
-<p><br/></p>
 <hr />
 <h2 id="firewalld-configuration">Firewalld configuration</h2>
 <p>Here we add firewalld and reject all connections except those on the custom ssh port (5588). We also put the port chosen for tor (here 9696)</p>
@@ -523,7 +521,6 @@ sudo firewall-cmd --add-port=9696/tcp --zone=block --permanent
 <pre><code>sudo firewall-cmd --reload
 sudo systemctl restart firewalld.service
 </code></pre>
-<p><br/></p>
 <hr />
 <h2 id="hardening">Hardening</h2>
 <p>Modify the /etc/passwd file and change root line with : </p>
@@ -585,7 +582,6 @@ sudo nano /etc/boot/XXXXXlinux.conf
 <p>Enforce defaults profiles : </p>
 <pre><code>aa-enforce /etc/apparmor.d/*
 </code></pre>
-<p><br/></p>
 <hr />
 <h2 id="tor-installation-archlinux">Tor installation (Archlinux)</h2>
 <p>Install tor on the concerned server :</p>
@@ -611,7 +607,6 @@ SocksPort 0
 <p>Start the service : </p>
 <pre><code>sudo systemctl enable --now tor.service
 </code></pre>
-<p><br/></p>
 <hr />
 <h2 id="tor-installation-debian">Tor installation (Debian)</h2>
 <p>Install apt-transport-https :</p>

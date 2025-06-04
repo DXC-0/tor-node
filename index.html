@@ -497,7 +497,7 @@ PermitTunnel no
 LoginGraceTime 300
 X11Forwarding no
 ClientAliveInterval 0
-PermitTTY no
+PermitTTY yes
 PrintMotd no
 Banner /etc/banner.exemple
 Subsystem   sftp    /usr/lib/ssh/sftp-server
@@ -620,7 +620,7 @@ deb-src [signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://d
 <pre><code>sudo apt install gnupg
 </code></pre>
 <p>Add GPG keys : </p>
-<pre><code>wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/deb.torproject.org-keyring.gpg &gt;/dev/null
+<pre><code>wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/deb.torproject.org-keyring.gpg &gt;/dev/null
 </code></pre>
 <p>Update and install tor : </p>
 <pre><code>apt update
